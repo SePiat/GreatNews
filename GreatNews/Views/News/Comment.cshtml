@@ -1,0 +1,41 @@
+﻿@model GreatNews.Models.News
+@{
+    ViewData["Title"] = "Comment";
+}
+
+
+<h2>Comment</h2>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Комментаний к новости:</title>
+</head>
+<body>
+   
+<div>
+   
+    
+    <form method="post">
+        <input type="hidden" value="@ViewBag.newsId" name="NewsId"/>
+        <table>
+            @*<tr>
+                <td>Имя:</td>
+                <td><input type="text" name="user" /></td>
+            </tr>*@
+            <tr>
+                <td>Комментарий:</td>
+                <td><input type="text" name="Comment" /></td>
+            </tr>
+            <tr>
+                <td>Дата:</td>
+                <td><input type="date" value="@DateTime.Now.Date" name="Date" /></td>
+            </tr>
+            <tr><td><input type="submit" value="Отправить" /></td></tr>
+            
+        </table>
+    </form>
+</div>
+</body>
+</html>
+
