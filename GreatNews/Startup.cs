@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using GreatNews.Models;
+using GreatNews.Repository;
+using GreatNews.UoW;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -32,6 +34,12 @@ namespace GreatNews
 
             string connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<NewsContext>(options => options.UseSqlServer(connection));
+
+            services.AddTransient<IGenericRepository<News>, NewsRepository>();
+            services.AddTransient<IGenericRepository<User>, UserRepository>();
+            services.AddTransient<IGenericRepository<Comment>, CommentRepository>();
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
+
             services.AddMvc();
 
 
