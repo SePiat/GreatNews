@@ -28,8 +28,8 @@ namespace GreatNews.Controllers
             var newsFromArt13 = _ArtServ13.GetArticleFromUrl();
             _ArtServ13.AddRange(newsFromArt13);
 
-            var newsFromArtOnl = _ArtServ13.GetArticleFromUrl();
-            _ArtServ13.AddRange(newsFromArtOnl);
+            var newsFromArtOnl = _ArtServOnliner.GetArticleFromUrl();
+            _ArtServOnliner.AddRange(newsFromArtOnl);
 
             uow.Save();
          
