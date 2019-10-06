@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AgilityPackSample.Services;
 using GreatNews.Models;
 using GreatNews.Repository;
+using GreatNews.Services;
 using GreatNews.UoW;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -39,6 +41,8 @@ namespace GreatNews
             services.AddTransient<IGenericRepository<User>, UserRepository>();
             services.AddTransient<IGenericRepository<Comment>, CommentRepository>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
+            services.AddTransient<IHtmlArticleService, ArticleServiceS13>();
+            //services.AddTransient<IHtmlArticleService, ArticleServiceOLiner>();
 
             services.AddMvc();
 

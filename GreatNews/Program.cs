@@ -16,24 +16,24 @@ namespace GreatNews
     {
         public static void Main(string[] args)
         {
-            //CreateWebHostBuilder(args).Build().Run();
-            var host = CreateWebHostBuilder(args).Build();
-            using (var scope = host.Services.CreateScope())
-            {
-                var services = scope.ServiceProvider;
-                try
-                {
-                    var context = services.GetRequiredService<NewsContext>();
-                    SampleNews.Initialize(context);
+            CreateWebHostBuilder(args).Build().Run();
+            //var host = CreateWebHostBuilder(args).Build();
+            //using (var scope = host.Services.CreateScope())
+            //{
+            //    var services = scope.ServiceProvider;
+            //    try
+            //    {
+            //        var context = services.GetRequiredService<NewsContext>();
+            //        SampleNews.Initialize(context);
 
-                }
-                catch (Exception e)
-                {
-                    var logger = services.GetRequiredService<ILogger<Program>>();
-                    logger.LogError(e, "An error occurred while seeding the database");
-                }
-            }
-            host.Run();
+            //    }
+            //    catch (Exception e)
+            //    {
+            //        var logger = services.GetRequiredService<ILogger<Program>>();
+            //        logger.LogError(e, "An error occurred while seeding the database");
+            //    }
+            //}
+            //host.Run();
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>

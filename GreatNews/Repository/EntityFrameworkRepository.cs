@@ -33,6 +33,13 @@ namespace GreatNews.Repository
             _table.Add(obj);
         }
 
+        public void InsertRange(List<T> obj)
+        {
+            _table.AddRange(obj);
+            
+        }
+
+
         public void Update(T obj)
         {
             _table.Attach(obj);

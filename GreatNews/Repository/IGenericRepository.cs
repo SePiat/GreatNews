@@ -10,6 +10,8 @@ namespace GreatNews.Repository
         IEnumerable<T> GetAll();
         T GetById(object Id);
         void Insert(T obj);
+
+        void InsertRange(List<T> obj);
         void Update(T obj);
         void Delete(object Id);
         IQueryable<T> AsQueryable();

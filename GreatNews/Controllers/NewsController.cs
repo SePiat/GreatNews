@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AgilityPackSample.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -14,12 +15,21 @@ namespace GreatNews.Controllers
     {
 
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IHtmlArticleService _ArtServ;
 
-        public NewsController(IUnitOfWork uow)
+        public NewsController(IUnitOfWork uow, IHtmlArticleService ArtServ)
         {
             _unitOfWork = uow;
+            _ArtServ = ArtServ;
+        
+            var newsFromArt = _ArtServ.GetArticleFromUrl();
+            _ArtServ.AddRange(newsFromArt);
+            uow.Save();
+         
+            
 
         }
+
 
         //private readonly NewsContext _context;
 
