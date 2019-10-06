@@ -13,7 +13,7 @@ using HtmlAgilityPack;
 
 namespace AgilityPackSample.Services
 {
-    public class ArticleServiceS13 : IHtmlArticleService
+    public class ArticleServiceS13 : IHtmlArticleServiceS13
     {
         private readonly string SrsUrl= @"http://s13.ru/rss";
         private readonly IUnitOfWork _unitOfWork;

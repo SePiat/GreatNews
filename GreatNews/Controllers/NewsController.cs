@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GreatNews.Models;
+using GreatNews.Services;
 using GreatNews.UoW;
 
 namespace GreatNews.Controllers
@@ -15,15 +16,21 @@ namespace GreatNews.Controllers
     {
 
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IHtmlArticleService _ArtServ;
+        private readonly IHtmlArticleServiceS13 _ArtServ13;
+        private readonly IHtmlArticleServiceOnliner _ArtServOnliner;
 
-        public NewsController(IUnitOfWork uow, IHtmlArticleService ArtServ)
+        public NewsController(IUnitOfWork uow, IHtmlArticleServiceS13 ArtServ13, IHtmlArticleServiceOnliner ArtServOnliner)
         {
             _unitOfWork = uow;
-            _ArtServ = ArtServ;
-        
-            var newsFromArt = _ArtServ.GetArticleFromUrl();
-            _ArtServ.AddRange(newsFromArt);
+            _ArtServ13 = ArtServ13;
+            _ArtServOnliner = ArtServOnliner;
+
+            var newsFromArt13 = _ArtServ13.GetArticleFromUrl();
+            _ArtServ13.AddRange(newsFromArt13);
+
+            var newsFromArtOnl = _ArtServ13.GetArticleFromUrl();
+            _ArtServ13.AddRange(newsFromArtOnl);
+
             uow.Save();
          
             

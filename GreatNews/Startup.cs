@@ -41,8 +41,8 @@ namespace GreatNews
             services.AddTransient<IGenericRepository<User>, UserRepository>();
             services.AddTransient<IGenericRepository<Comment>, CommentRepository>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
-            services.AddTransient<IHtmlArticleService, ArticleServiceS13>();
-            //services.AddTransient<IHtmlArticleService, ArticleServiceOLiner>();
+            services.AddTransient<IHtmlArticleServiceS13, ArticleServiceS13>();
+            services.AddTransient<IHtmlArticleServiceOnliner, ArticleServiceOnliner>();
 
             services.AddMvc();
 

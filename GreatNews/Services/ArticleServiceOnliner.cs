@@ -12,7 +12,7 @@ using HtmlAgilityPack;
 
 namespace GreatNews.Services
 {
-    public class ArticleServiceOnliner : IHtmlArticleService
+    public class ArticleServiceOnliner : IHtmlArticleServiceOnliner
     {
         private readonly string SrsUrl = @"https://tech.onliner.by/feed";
         private readonly IUnitOfWork _unitOfWork;

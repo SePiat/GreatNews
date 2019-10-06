@@ -7,7 +7,7 @@ using GreatNews.Models;
 
 namespace AgilityPackSample.Services
 {
-    public interface IHtmlArticleService : IArticleService
+    public interface IHtmlArticleServiceS13 : IArticleService
     {
         IEnumerable<News> GetArticleFromUrl();
         bool AddRange(IEnumerable<News> news);
