@@ -10,7 +10,7 @@ namespace GreatNews.Models
     {
         public DbSet<News> News_ { get; set; }
         public DbSet<Comment> Comments_ { get; set; }
-        public DbSet<User> Users_ { get; set; }
+        public DbSet<UserDB> Users_ { get; set; }
 
         public NewsContext(DbContextOptions<NewsContext> options):base(options)
         {

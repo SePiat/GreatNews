@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -37,8 +38,12 @@ namespace GreatNews
             string connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<NewsContext>(options => options.UseSqlServer(connection));
 
+            services.AddDbContext<ApplicationContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection")));
+            services.AddIdentity<UserIdent, IdentityRole>().AddEntityFrameworkStores<ApplicationContext>();
+
             services.AddTransient<IGenericRepository<News>, NewsRepository>();
-            services.AddTransient<IGenericRepository<User>, UserRepository>();
+            services.AddTransient<IGenericRepository<UserDB>, UserRepository>();
             services.AddTransient<IGenericRepository<Comment>, CommentRepository>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IHtmlArticleServiceS13, ArticleServiceS13>();
@@ -66,12 +71,13 @@ namespace GreatNews
             //app.UseHttpsRedirection();
             app.UseStaticFiles();
             //app.UseCookiePolicy();
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=News}/{action=Index}/{id?}");
+                    template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

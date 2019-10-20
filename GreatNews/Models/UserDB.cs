@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace GreatNews.Models
 {
-    public class User : DataBaseEntity
+    public class UserDB : DataBaseEntity
     {
         //public int Id { get; set; }
         public string Name { get; set; }

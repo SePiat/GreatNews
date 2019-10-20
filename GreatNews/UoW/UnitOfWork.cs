@@ -11,12 +11,12 @@ namespace GreatNews.UoW
     {
         private readonly NewsContext _context;
         private readonly IGenericRepository<News> _newsRepository;
-        private readonly IGenericRepository<User> _userRepository;
+        private readonly IGenericRepository<UserDB> _userRepository;
         private readonly IGenericRepository<Comment> _commentRepository;
 
         public UnitOfWork(NewsContext context,
             IGenericRepository<News> newsRepository,
-            IGenericRepository<User> userRepository,
+            IGenericRepository<UserDB> userRepository,
             IGenericRepository<Comment> commentRepository)
         {
             _context = context;
@@ -28,7 +28,7 @@ namespace GreatNews.UoW
 
         public IGenericRepository<News> News_ => _newsRepository;
 
-        public IGenericRepository<User> Users => _userRepository;
+        public IGenericRepository<UserDB> Users => _userRepository;
 
         public IGenericRepository<Comment> Comments => _commentRepository;
 

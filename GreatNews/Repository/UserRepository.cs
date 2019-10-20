@@ -6,7 +6,7 @@ using GreatNews.Models;
 
 namespace GreatNews.Repository
 {
-    public class UserRepository : EntityFrameworkRepository<User>
+    public class UserRepository : EntityFrameworkRepository<UserDB>
     {
         public UserRepository(NewsContext _context) : base(_context)
         {

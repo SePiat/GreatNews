@@ -1,21 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.ServiceModel.Syndication;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Xml;
-using GreatNews.Models;
+﻿using GreatNews.Models;
 using GreatNews.UoW;
 using HtmlAgilityPack;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.ServiceModel.Syndication;
+using System.Text.RegularExpressions;
+using System.Xml;
 
 namespace AgilityPackSample.Services
 {
     public class ArticleServiceS13 : IHtmlArticleServiceS13
     {
-        private readonly string SrsUrl= @"http://s13.ru/rss";
+        private readonly string SrsUrl = @"http://s13.ru/rss";
         private readonly IUnitOfWork _unitOfWork;
 
         public ArticleServiceS13(IUnitOfWork unitOfWork)
@@ -51,7 +48,7 @@ namespace AgilityPackSample.Services
                 }
             }
 
-           
+
             return news;
         }
 
@@ -65,7 +62,7 @@ namespace AgilityPackSample.Services
             var mas = new string[] { "&ndash; ", "&ndash;", "&mdash; ", "&mdash;", "&nbsp; ", "&nbsp; ", "&nbsp;", "&laquo; ", "&laquo;", "&raquo; ", "&raquo;" };
 
             foreach (var item in mas)
-                
+
             {
                 text = text.Replace(item, "");
             }
@@ -91,9 +88,18 @@ namespace AgilityPackSample.Services
 
             return true;
         }
-        public bool Add(News article)
+        public bool Add(News news)
         {
-            throw new NotImplementedException();
+            if (_unitOfWork.News_.AsQueryable().Where(u => u.Heading.Contains(news.Heading)).Count() == 0)
+            {
+                _unitOfWork.News_.Insert(news);
+            }
+            else
+            {
+                return false;
+            }
+
+            return true;
         }
 
         public IEnumerable<News> GetFromUrl()
@@ -106,6 +112,6 @@ namespace AgilityPackSample.Services
             throw new NotImplementedException();
         }
 
-       
+
     }
 }

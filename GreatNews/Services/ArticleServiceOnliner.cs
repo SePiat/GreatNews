@@ -90,9 +90,18 @@ namespace GreatNews.Services
 
             return true;
         }
-        public bool Add(News article)
+        public bool Add(News news)
         {
-            throw new NotImplementedException();
+            if (_unitOfWork.News_.AsQueryable().Where(u => u.Heading.Contains(news.Heading)).Count() == 0)
+            {
+                _unitOfWork.News_.Insert(news);
+            }
+            else
+            {
+                return false;
+            }
+
+            return true;
         }
 
         public IEnumerable<News> GetFromUrl()

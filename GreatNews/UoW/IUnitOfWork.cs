@@ -10,7 +10,7 @@ namespace GreatNews.UoW
    public interface IUnitOfWork : IDisposable
     {
         IGenericRepository<News> News_ { get; }
-        IGenericRepository<User> Users { get; }
+        IGenericRepository<UserDB> Users { get; }
         IGenericRepository<Comment> Comments { get; }
 
         void Save();
