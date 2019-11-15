@@ -1,0 +1,238 @@
+{
+  "format": 1,
+  "restore": {
+    "c:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\GreatNews.Services\\GreatNews.Services.csproj": {}
+  },
+  "projects": {
+    "c:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\CORE_\\CORE_.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "c:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\CORE_\\CORE_.csproj",
+        "projectName": "CORE_",
+        "projectPath": "c:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\CORE_\\CORE_.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\CORE_\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "c:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\GreatNews.Data\\GreatNews.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "c:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\GreatNews.Data\\GreatNews.Data.csproj",
+        "projectName": "GreatNews.Data",
+        "projectPath": "c:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\GreatNews.Data\\GreatNews.Data.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\GreatNews.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "c:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\GreatNews.Repository\\GreatNews.Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "c:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\GreatNews.Repository\\GreatNews.Repository.csproj",
+        "projectName": "GreatNews.Repository",
+        "projectPath": "c:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\GreatNews.Repository\\GreatNews.Repository.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\GreatNews.Repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "c:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\CORE_\\CORE_.csproj": {
+                "projectPath": "c:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\CORE_\\CORE_.csproj"
+              },
+              "c:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\GreatNews.Data\\GreatNews.Data.csproj": {
+                "projectPath": "c:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\GreatNews.Data\\GreatNews.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "c:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\GreatNews.Services\\GreatNews.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "c:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\GreatNews.Services\\GreatNews.Services.csproj",
+        "projectName": "GreatNews.Services",
+        "projectPath": "c:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\GreatNews.Services\\GreatNews.Services.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\GreatNews.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "c:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\GreatNews.Data\\GreatNews.Data.csproj": {
+                "projectPath": "c:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\GreatNews.Data\\GreatNews.Data.csproj"
+              },
+              "c:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\GreatNews.Repository\\GreatNews.Repository.csproj": {
+                "projectPath": "c:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\GreatNews.Repository\\GreatNews.Repository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "HtmlAgilityPack": {
+              "target": "Package",
+              "version": "[1.11.15, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "System.ServiceModel.Syndication": {
+              "target": "Package",
+              "version": "[4.6.0, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}

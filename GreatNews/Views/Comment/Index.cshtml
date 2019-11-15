@@ -1,0 +1,50 @@
+﻿@model GreatNews.ViewModels.NewsCommentViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE html>
+<form method="post" asp-controller="Comment" asp-action="index">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div>
+        <a href="~/News/Comment/@Model.News.Id"><h2>@Model.News.Heading</h2></a>
+        <input class="hidden" type="text" name="Heading" value="@Model.News.Heading" />
+    </div>
+    <div>
+        @Model.News.Content
+        <input class="hidden" type="text" name="Content" value="@Model.News.Content" />
+    </div>
+    <div>
+        @Model.News.Date
+        <input class="hidden" type="datetime" name="Date" value="@Model.News.Date" />
+    </div>
+    <div>
+        <label>Enter positivity index</label>
+        <input class="alert-success" type="number" name="PositiveIndex" value="Enter positivity index" />
+    </div>
+    <div>
+        <a href=@Html.DisplayFor(modelItem => Model.News.Source)>@Model.News.Source</a>
+        <input class="hidden" type="text" name="Source" value="@Model.News.Source" />
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary">Place for comment</button>
+    </div>
+    <hr />
+    <br />
+    <label class="btn btn-success col-md-12" onclick="addElement()">comment</label>
+    <div id="addAfter">
+    </div>
+</form>
+
+
+
+@section Scripts
+    {
+    <script>
+
+                 function addElement() {
+                    @*  @await Html.PartialAsync("/Views/Comment/CommPart", @Model)*@
+                    $('#addAfter').load("/News/AddPartComm");
+                }
+    </script>
+}

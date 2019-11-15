@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
-using AgilityPackSample.Services;
 using GreatNews.Models;
 
-namespace GreatNews.Services
+namespace AgilityPackSample.Services
 {
-    public interface IHtmlArticleServiceOnliner : IArticleService
+    public interface IHtmlArticleServiceS13 : IArticleService<News>
     {
         IEnumerable<News> GetArticleFromUrl();
         bool AddRange(IEnumerable<News> news);

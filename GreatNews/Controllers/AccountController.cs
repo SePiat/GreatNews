@@ -96,7 +96,7 @@ namespace GreatNews.Controllers
             return RedirectToAction("Index", "Home");
         }
         [Authorize]
-        public async Task<IActionResult> Administration()
+        public IActionResult Administration()
         {
            return View();
         }
