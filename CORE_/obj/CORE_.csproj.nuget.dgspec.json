@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\CORE_\\CORE_.csproj": {}
+    "C:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\CORE_\\CORE_.csproj": {}
   },
   "projects": {
-    "c:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\CORE_\\CORE_.csproj": {
+    "C:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\CORE_\\CORE_.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\CORE_\\CORE_.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\CORE_\\CORE_.csproj",
         "projectName": "CORE_",
-        "projectPath": "c:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\CORE_\\CORE_.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\CORE_\\CORE_.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\CORE_\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\CORE_\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

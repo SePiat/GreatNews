@@ -9,7 +9,7 @@ namespace GreatNews
 {
     public class CommentRepository : EntityFrameworkRepository<Comment>
     {
-        public CommentRepository(NewsContext _context) : base(_context)
+        public CommentRepository(ApplicationContext _context) : base(_context)
         {
         }
     }

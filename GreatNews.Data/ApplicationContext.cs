@@ -7,8 +7,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GreatNews.Models
 {
-    public class ApplicationContext : IdentityDbContext<UserIdent>
+    public class ApplicationContext : IdentityDbContext
     {
+        public DbSet<News> News_ { get; set; }
+        public DbSet<Comment> Comments_ { get; set; }
+
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
             Database.EnsureCreated();

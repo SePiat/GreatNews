@@ -1,4 +1,6 @@
 ﻿@model GreatNews.ViewModels.NewsCommentViewModel
+
+
 @{
     ViewData["Title"] = "Index";
 }
@@ -18,33 +20,77 @@
         @Model.News.Date
         <input class="hidden" type="datetime" name="Date" value="@Model.News.Date" />
     </div>
-    <div>
-        <label>Enter positivity index</label>
-        <input class="alert-success" type="number" name="PositiveIndex" value="Enter positivity index" />
-    </div>
+   
     <div>
         <a href=@Html.DisplayFor(modelItem => Model.News.Source)>@Model.News.Source</a>
         <input class="hidden" type="text" name="Source" value="@Model.News.Source" />
     </div>
-    <div>
-        <button type="submit" class="btn btn-primary">Place for comment</button>
-    </div>
     <hr />
     <br />
-    <label class="btn btn-success col-md-12" onclick="addElement()">comment</label>
-    <div id="addAfter">
+    
+
+    <div id="commentContainer" class="container media-body">
+        @await Html.PartialAsync("/Views/Comment/CommPart.cshtml", @Model)
     </div>
 </form>
 
 
 
-@section Scripts
-    {
-    <script>
 
-                 function addElement() {
-                    @*  @await Html.PartialAsync("/Views/Comment/CommPart", @Model)*@
-                    $('#addAfter').load("/News/AddPartComm");
-                }
-    </script>
-}
+<div class="form-group" style="margin-top: 15px;">
+    <input type="hidden" id="newsId" name="id" value="@Model.News.Id" />
+    <textarea id="commentText" name="text" class="form-control" rows="6" style="resize: none"></textarea>
+    <div class="container text-right">
+        <button class="btn btn-primary btn-send-comment col-md-2" style="margin-top: 10px; margin-bottom: 10px; font-size: 20px;">Upload</button>
+    </div>
+</div>
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('.btn-send-comment').click(
+            sendComment
+        )
+    });
+
+    function sendComment() {
+        var comment = {
+            Id: $('#newsId').val(),
+            Text: $('#commentText').val()
+        };
+
+        $.post({
+            url: "/comment/sendComment",
+            data: JSON.stringify(comment),
+            contentType: "application/json",
+            success: function (result) {
+                $('#commentText').val('');
+                reloadComments();
+            },
+            error: errorFunc
+        });
+    };
+
+
+    function errorFunc(errorData) {
+        alert('Ошибка' + errorData.responseText);
+    }
+
+    function reloadComments() {
+        $.ajax({
+            url: '/Comment/CommPart/' + "?id=" + $('#newsId').val(),
+            type: "GET",
+            success: function (data) {
+               
+                $('#commentContainer').fadeOut(400,
+                    function () {
+                        $('#commentContainer').html(data);
+                        $(this).fadeIn(300);
+                    });
+            },
+            error: errorFunc
+        });
+    }
+
+</script>

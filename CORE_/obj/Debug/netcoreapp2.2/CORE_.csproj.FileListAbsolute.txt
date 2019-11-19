@@ -6,3 +6,4 @@ C:\Users\User\Desktop\RepVS\GreatNews\GreatNews\CORE_\obj\Debug\netcoreapp2.2\CO
 C:\Users\User\Desktop\RepVS\GreatNews\GreatNews\CORE_\obj\Debug\netcoreapp2.2\CORE_.AssemblyInfo.cs
 C:\Users\User\Desktop\RepVS\GreatNews\GreatNews\CORE_\obj\Debug\netcoreapp2.2\CORE_.dll
 C:\Users\User\Desktop\RepVS\GreatNews\GreatNews\CORE_\obj\Debug\netcoreapp2.2\CORE_.pdb
+c:\Users\User\Desktop\RepVS\GreatNews\GreatNews\CORE_\obj\Debug\netcoreapp2.2\CORE_.csprojAssemblyReference.cache

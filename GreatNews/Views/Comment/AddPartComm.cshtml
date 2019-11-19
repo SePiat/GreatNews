@@ -1,12 +1,11 @@
-﻿
-<div class="comments">
+﻿<div class="comments">
     <h3 class="title-comments">Comments</h3>
     <ul class="media-list">
-        <!-- Комментарий (уровень 1) -->
-        <li class="media">
+            <li class="media">
             <div class="media-left">
                 <a href="#">
                     <!--<img class="media-object img-rounded" src="avatar1.jpg" alt="..."> -->
+
                 </a>
             </div>
             <div class="media-body">
@@ -14,9 +13,9 @@
                     <div class="panel-heading">
                         <label id="author" class="author">@User.Identity.Name</label>
                         <div class="metadata">
-                            
+
                             <label id="date" for="date">@DateTime.Now</label>
-                            
+
                         </div>
                     </div>
                     <div class="panel-body">
@@ -30,40 +29,8 @@
                 </div>
             </div>
         </li>
-        <!-- Конец комментария (уровень 1) -->
-
-    </ul>
+       </ul>
 </div>
 
-@section Scripts
-{
-    <script>
-        
-            $('.reg-btn').click(function () {
-                let commText = $('#CommentText')[0].value;
-                let date = $('#date')[0].value;
-                let userId = $('#author')[0].value;
-                let newsId = idNews;
 
-               
-                $.post({
-                    url: "/account/register",
-                    data: {
-                        email: email,
-                        password: password,
-                        passwordConfirmation: passwordConfirm,
-                        login: login,
-                        birthDate: date
-                    }
-                })
-                    .done(function (data) {
-
-                    })
-                    .fail(function () {
-
-                    })
-            });
-
-        });
-    </script>
 }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CORE_
+namespace Core
 {
     public class Class1
     {

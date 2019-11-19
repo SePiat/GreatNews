@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GreatNews.Migrations
 {
-    [DbContext(typeof(NewsContext))]
+    [DbContext(typeof(ApplicationContext))]
     [Migration("20191006113508_init")]
     partial class init
     {

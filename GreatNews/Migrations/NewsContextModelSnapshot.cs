@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GreatNews.Migrations
 {
-    [DbContext(typeof(NewsContext))]
+    [DbContext(typeof(ApplicationContext))]
     partial class NewsContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

@@ -8,7 +8,7 @@ namespace GreatNews.Repository
 {
     public class NewsRepository : EntityFrameworkRepository<News>
     {
-        public NewsRepository(NewsContext _context) : base(_context)
+        public NewsRepository(ApplicationContext _context) : base(_context)
         {
         }
     }

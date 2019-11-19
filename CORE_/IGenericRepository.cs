@@ -15,5 +15,6 @@ namespace GreatNews.Repository
         void Update(T obj);
         void Delete(object Id);
         IQueryable<T> AsQueryable();
+        Task AddAsync(T obj);
     }
 }

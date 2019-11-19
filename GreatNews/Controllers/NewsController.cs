@@ -102,10 +102,7 @@ namespace GreatNews.Controllers
         }
 
 
-        public ActionResult AddPartComm(NewsCommentViewModel model)
-        {
-            return View(model);
-        }
+      
 
 
 

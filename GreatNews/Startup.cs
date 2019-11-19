@@ -36,14 +36,14 @@ namespace GreatNews
             //services.AddMvc();
 
             string connection = Configuration.GetConnectionString("DefaultConnection");
-            services.AddDbContext<NewsContext>(options => options.UseSqlServer(connection));
+           /* services.AddDbContext<NewsContext>(options => options.UseSqlServer(connection));*/
 
             services.AddDbContext<ApplicationContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection")));
             services.AddIdentity<UserIdent, IdentityRole>().AddEntityFrameworkStores<ApplicationContext>();
 
             services.AddTransient<IGenericRepository<News>, NewsRepository>();
-            services.AddTransient<IGenericRepository<UserDB>, UserRepository>();
+            
             services.AddTransient<IGenericRepository<Comment>, CommentRepository>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IHtmlArticleServiceS13, ArticleServiceS13>();

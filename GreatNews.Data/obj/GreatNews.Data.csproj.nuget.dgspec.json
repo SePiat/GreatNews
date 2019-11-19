@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\GreatNews.Data\\GreatNews.Data.csproj": {}
+    "C:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\GreatNews.Data\\GreatNews.Data.csproj": {}
   },
   "projects": {
-    "c:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\GreatNews.Data\\GreatNews.Data.csproj": {
+    "C:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\GreatNews.Data\\GreatNews.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\GreatNews.Data\\GreatNews.Data.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\GreatNews.Data\\GreatNews.Data.csproj",
         "projectName": "GreatNews.Data",
-        "projectPath": "c:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\GreatNews.Data\\GreatNews.Data.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\GreatNews.Data\\GreatNews.Data.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\GreatNews.Data\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\GreatNews.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

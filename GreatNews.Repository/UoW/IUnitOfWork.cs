@@ -10,9 +10,11 @@ namespace GreatNews.UoW
    public interface IUnitOfWork : IDisposable
     {
         IGenericRepository<News> News_ { get; }
-        IGenericRepository<UserDB> Users { get; }
+        
         IGenericRepository<Comment> Comments { get; }
 
         void Save();
+        Task SaveAsync();
+       
     }
 }

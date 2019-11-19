@@ -9,10 +9,10 @@ namespace GreatNews.Repository
 {
     public class EntityFrameworkRepository<T>: IGenericRepository<T> where T : DataBaseEntity
     {
-        public NewsContext _context;
+        public ApplicationContext _context;
         private readonly DbSet<T> _table;
 
-        public EntityFrameworkRepository(NewsContext _context)
+        public EntityFrameworkRepository(ApplicationContext _context)
         {
             this._context = _context;
             this._table = _context.Set<T>();
@@ -56,7 +56,10 @@ namespace GreatNews.Repository
         {
             return _table.AsQueryable();
         }
-
+        public async Task AddAsync(T obj)
+        {
+            await _table.AddAsync(obj);
+        }
 
     }
 }
