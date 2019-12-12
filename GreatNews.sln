@@ -5,13 +5,17 @@ VisualStudioVersion = 16.0.29230.47
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GreatNews", "GreatNews\GreatNews.csproj", "{A76C0DD0-D1C6-42E5-82C7-CB013E8E591F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CORE_", "CORE_\CORE_.csproj", "{97CD86E2-76A6-4115-A268-34311AC16655}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CORE_", "CORE_\CORE_.csproj", "{97CD86E2-76A6-4115-A268-34311AC16655}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreatNews.Repository", "GreatNews.Repository\GreatNews.Repository.csproj", "{208F5CD7-900B-415E-896B-0E85D7E89DA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GreatNews.Repository", "GreatNews.Repository\GreatNews.Repository.csproj", "{208F5CD7-900B-415E-896B-0E85D7E89DA6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreatNews.Data", "GreatNews.Data\GreatNews.Data.csproj", "{CC8AF42B-C6FF-4A29-8FED-47A8F1C38DCD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GreatNews.Data", "GreatNews.Data\GreatNews.Data.csproj", "{CC8AF42B-C6FF-4A29-8FED-47A8F1C38DCD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreatNews.Services", "GreatNews.Services\GreatNews.Services.csproj", "{F503BF15-E7A5-46F6-900D-2848AB0423DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GreatNews.Services", "GreatNews.Services\GreatNews.Services.csproj", "{F503BF15-E7A5-46F6-900D-2848AB0423DC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{9C16D9EB-3A5A-4D22-96AD-13228ADEA93C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatR_", "MediatR_\MediatR_.csproj", "{6591836C-F2E2-4409-8994-C8049ACFE462}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{F503BF15-E7A5-46F6-900D-2848AB0423DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F503BF15-E7A5-46F6-900D-2848AB0423DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F503BF15-E7A5-46F6-900D-2848AB0423DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C16D9EB-3A5A-4D22-96AD-13228ADEA93C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C16D9EB-3A5A-4D22-96AD-13228ADEA93C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C16D9EB-3A5A-4D22-96AD-13228ADEA93C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C16D9EB-3A5A-4D22-96AD-13228ADEA93C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6591836C-F2E2-4409-8994-C8049ACFE462}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6591836C-F2E2-4409-8994-C8049ACFE462}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6591836C-F2E2-4409-8994-C8049ACFE462}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6591836C-F2E2-4409-8994-C8049ACFE462}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

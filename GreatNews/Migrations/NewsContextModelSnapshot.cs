@@ -26,13 +26,13 @@ namespace GreatNews.Migrations
 
                     b.Property<string>("Comment_");
 
-                    b.Property<int>("NewsId");
+                    /*b.Property<Guid>("NewsId");*/
 
-                    b.Property<Guid?>("NewsId1");
+                    b.Property<Guid?>("NewsId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("NewsId1");
+                    b.HasIndex("NewsId");
 
                     b.ToTable("Comments_");
                 });

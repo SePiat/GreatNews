@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using GreatNews.Models;
 
-namespace AgilityPackSample.Services
+namespace GreatNews.Services
 {
     public interface IHtmlArticleServiceS13 : IArticleService<News>
     {

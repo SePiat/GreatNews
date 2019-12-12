@@ -5,7 +5,7 @@ using System.ServiceModel.Syndication;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml;
-using AgilityPackSample.Services;
+using GreatNews.Services;
 using GreatNews.Models;
 using GreatNews.UoW;
 using HtmlAgilityPack;

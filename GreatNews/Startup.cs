@@ -1,21 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AgilityPackSample.Services;
-using GreatNews.Models;
+﻿using GreatNews.Models;
 using GreatNews.Repository;
 using GreatNews.Services;
 using GreatNews.UoW;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+
 
 namespace GreatNews
 {
@@ -36,14 +29,17 @@ namespace GreatNews
             //services.AddMvc();
 
             string connection = Configuration.GetConnectionString("DefaultConnection");
-           /* services.AddDbContext<NewsContext>(options => options.UseSqlServer(connection));*/
+            
 
             services.AddDbContext<ApplicationContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection")));
             services.AddIdentity<UserIdent, IdentityRole>().AddEntityFrameworkStores<ApplicationContext>();
 
+            /*services.AddHangfire(options =>
+                    options.UseSqlServerStorage(Configuration.GetConnectionString("IdentityConnection")));*/
+
             services.AddTransient<IGenericRepository<News>, NewsRepository>();
-            
+
             services.AddTransient<IGenericRepository<Comment>, CommentRepository>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IHtmlArticleServiceS13, ArticleServiceS13>();

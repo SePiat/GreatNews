@@ -4,11 +4,13 @@ using HtmlAgilityPack;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.ServiceModel.Syndication;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Xml;
 
-namespace AgilityPackSample.Services
+namespace GreatNews.Services
 {
     public class ArticleServiceS13 : IHtmlArticleServiceS13
     {
@@ -42,15 +44,34 @@ namespace AgilityPackSample.Services
                         //Description = Regex.Replace(article.Summary.Text, "<.*?>", string.Empty),
                         Source = article.Links.FirstOrDefault().Uri.ToString(),
                         Date = article.PublishDate.UtcDateTime,
-                        PositiveIndex = 0,
+                        PositiveIndex =0/* GetPositivityIndex(GetTextOfNews(article.Links.FirstOrDefault().Uri.ToString()))*/,
                         Content = GetTextOfNews(article.Links.FirstOrDefault().Uri.ToString())
                     });
                 }
             }
-
-
             return news;
         }
+        /*public int GetPositivityIndex(string content)
+        {
+            public string test = "тилли мили трямдяи стол собака табурет жили были";
+        public string cont = $"[{{\"text\":\"{test}\"}}]";
+
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));//ACCEPT header
+                HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, "http://api.ispras.ru/texterra/v1/nlp?targetType=lemma&apikey=40246ed5a95bc23c0fc92e98977b615dd94e2d1d");
+    request.Content = new StringContent(cont, Encoding.UTF8, "application/json");//CONTENT-TYPE header
+    var x = client.SendAsync(request).Result;
+
+    var responce = x.Content.ReadAsStringAsync().ToString();
+
+
+}
+
+            return 5;
+        }*/
+
+
 
         private int i;
         public string GetTextOfNews(string url)
@@ -111,6 +132,8 @@ namespace AgilityPackSample.Services
         {
             throw new NotImplementedException();
         }
+
+      
 
 
     }

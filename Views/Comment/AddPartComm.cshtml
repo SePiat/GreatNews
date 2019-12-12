@@ -1,0 +1,36 @@
+﻿<div class="comments">
+    <h3 class="title-comments">Comments</h3>
+    <ul class="media-list">
+            <li class="media">
+            <div class="media-left">
+                <a href="#">
+                    <!--<img class="media-object img-rounded" src="avatar1.jpg" alt="..."> -->
+
+                </a>
+            </div>
+            <div class="media-body">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <label id="author" class="author">@User.Identity.Name</label>
+                        <div class="metadata">
+
+                            <label id="date" for="date">@DateTime.Now</label>
+
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="media-text text-justify">
+                            <textarea class="form-control" id="CommentText" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <button class="waves-effect waves-light btn reg-btn btn-primary">Add comment</button>
+                    </div>
+                </div>
+            </div>
+        </li>
+       </ul>
+</div>
+
+
+}

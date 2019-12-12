@@ -1,0 +1,83 @@
+﻿@model IEnumerable<GreatNews.Models.News>
+@*@{
+        Layout = null;
+    }*@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @*<a asp-action="Create">Create New</a>*@
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Heading)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Content)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Date)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PositiveIndex)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Source)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @{int count = 0; }
+            @foreach (var item in Model)
+            {
+                count++;
+                <tr>
+                    <td>
+                        <a href="~/News/Comment/@item.Id">@Html.DisplayFor(modelItem => item.Heading)</a>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Content)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PositiveIndex)
+                    </td>
+                    <td>
+                        <a href=@Html.DisplayFor(modelItem => item.Source)>@Html.DisplayFor(modelItem => item.Source)</a>
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="6">
+                        <div id="test" class="row">
+                           
+                            <a class="btn btn-success" asp-controller="Comment" asp-action="Index" asp-route-id="@item.Id">comment</a>
+                            <!-- <label class="btn btn-success col-md-12" onclick="addElement(@count, @item.Id)">comment</label>-->
+                        </div>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+ 
+        
+</body>
+</html>
+
+

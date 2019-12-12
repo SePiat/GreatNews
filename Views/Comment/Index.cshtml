@@ -1,0 +1,96 @@
+﻿@model GreatNews.ViewModels.NewsCommentViewModel
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE html>
+<form method="post" asp-controller="Comment" asp-action="index">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div>
+        <a href="~/News/Comment/@Model.News.Id"><h2>@Model.News.Heading</h2></a>
+        <input class="hidden" type="text" name="Heading" value="@Model.News.Heading" />
+    </div>
+    <div>
+        @Model.News.Content
+        <input class="hidden" type="text" name="Content" value="@Model.News.Content" />
+    </div>
+    <div>
+        @Model.News.Date
+        <input class="hidden" type="datetime" name="Date" value="@Model.News.Date" />
+    </div>
+   
+    <div>
+        <a href=@Html.DisplayFor(modelItem => Model.News.Source)>@Model.News.Source</a>
+        <input class="hidden" type="text" name="Source" value="@Model.News.Source" />
+    </div>
+    <hr />
+    <br />
+    
+
+    <div id="commentContainer" class="container media-body">
+        @await Html.PartialAsync("/Views/Comment/CommPart.cshtml", @Model)
+    </div>
+</form>
+
+
+
+
+<div class="form-group" style="margin-top: 15px;">
+    <input type="hidden" id="newsId" name="id" value="@Model.News.Id" />
+    <textarea id="commentText" name="text" class="form-control" rows="6" style="resize: none"></textarea>
+    <div class="container text-right">
+        <button class="btn btn-primary btn-send-comment col-md-2" style="margin-top: 10px; margin-bottom: 10px; font-size: 20px;">Upload</button>
+    </div>
+</div>
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('.btn-send-comment').click(
+            sendComment
+        )
+    });
+
+    function sendComment() {
+        var comment = {
+            Id: $('#newsId').val(),
+            Text: $('#commentText').val()
+        };
+
+        $.post({
+            url: "/comment/sendComment",
+            data: JSON.stringify(comment),
+            contentType: "application/json",
+            success: function (result) {
+                $('#commentText').val('');
+                reloadComments();
+            },
+            error: errorFunc
+        });
+    };
+
+
+    function errorFunc(errorData) {
+        alert('Ошибка' + errorData.responseText);
+    }
+
+    function reloadComments() {
+        $.ajax({
+            url: '/Comment/CommPart/' + "?id=" + $('#newsId').val(),
+            type: "GET",
+            success: function (data) {
+               
+                $('#commentContainer').fadeOut(400,
+                    function () {
+                        $('#commentContainer').html(data);
+                        $(this).fadeIn(300);
+                    });
+            },
+            error: errorFunc
+        });
+    }
+
+</script>

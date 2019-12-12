@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using AgilityPackSample.Services;
+using GreatNews.Services;
 using GreatNews.Models;
 
 namespace GreatNews.Services

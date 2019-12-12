@@ -1,0 +1,40 @@
+﻿@model IEnumerable<GreatNews.Models.News>
+@*@{
+        Layout = null;
+    }*@
+
+<!DOCTYPE html>
+
+
+@foreach (var item in Model)
+{
+    <form method="post" asp-controller="News" asp-action="RefreshOnliner">
+        <div asp-validation-summary="ModelOnly"></div>
+        <div>
+            <a href="~/News/Comment/@item.Id"><h2>@item.Heading</h2></a>
+            <input class="hidden" type="text" name="Heading" value="@item.Heading" />
+        </div>
+        <div>
+            @item.Content
+            <input class="hidden" type="text" name="Content" value="@item.Content" />
+        </div>
+        <div>
+            @item.Date
+            <input class="hidden" type="datetime" name="Date" value="@item.Date" />
+        </div>
+        <div>
+            <label>Enter positivity index</label>
+            <input class="alert-success" type="number" name="PositiveIndex" value="Enter positivity index" />
+        </div>
+        <div>
+            <a href=@Html.DisplayFor(modelItem => item.Source)>@item.Source</a>
+            <input class="hidden" type="text" name="Source" value="@item.Source" />
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Upload a news database</button>
+        </div>
+        <hr />
+        <br />
+
+    </form>
+}

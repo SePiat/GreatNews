@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace AgilityPackSample.Services
+namespace GreatNews.Services
 {
     public interface IArticleService<T> where T : class
     {

@@ -1,20 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AgilityPackSample.Services;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using GreatNews.Models;
+﻿using GreatNews.Models;
 using GreatNews.Services;
 using GreatNews.UoW;
 using Microsoft.AspNetCore.Authorization;
-using GreatNews.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace GreatNews.Controllers
 {
-    
+
     public class NewsController : Controller
     {
 
@@ -27,12 +20,12 @@ namespace GreatNews.Controllers
             _unitOfWork = uow;
             _ArtServ13 = ArtServ13;
             _ArtServOnliner = ArtServOnliner;
-       
+
         }
         [Authorize]
         public IActionResult Index()
         {
-            
+
             return View(_unitOfWork.News_.AsQueryable());
         }
 
@@ -95,14 +88,14 @@ namespace GreatNews.Controllers
             {
                 return NotFound();
             }
-            
+
             _unitOfWork.News_.Delete(id);
             _unitOfWork.Save();
             return RedirectToAction("Index");
         }
 
 
-      
+
 
 
 

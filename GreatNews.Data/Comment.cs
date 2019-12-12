@@ -14,6 +14,6 @@ namespace GreatNews.Models
         public UserIdent UsersId { get; set; }
 
         public News News { get; set; }
-        public int NewsId { get; set; }
+        public Guid NewsId { get; set; }
     }
 }

@@ -30,7 +30,7 @@ namespace GreatNews.Migrations
                     Id = table.Column<Guid>(nullable: false),
                     Comment_ = table.Column<string>(nullable: true),
                     NewsId1 = table.Column<Guid>(nullable: true),
-                    NewsId = table.Column<int>(nullable: false)
+                    NewsId = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
                 {

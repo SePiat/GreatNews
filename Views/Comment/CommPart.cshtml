@@ -1,0 +1,73 @@
+﻿@model GreatNews.ViewModels.NewsCommentViewModel
+@using System.Security.Claims
+
+    <div class="container" id="partialComments">
+        <span class="btn-primary col-md-2" style="margin-top: 10px; margin-bottom: 10px; font-size: 30px;">Comments</span><br><br><br><br>
+        <div class="container" id="commentContainer">
+            @if (Model.Comments.Any())
+            {
+                @foreach (var comment in Model.Comments)
+                {
+                    <div id="@comment.Id" class="card m-1">
+                        <div class="card-body">
+                            <div class="row">
+                                <div >
+
+                                    <p class="text-secondary">@comment.DatePub</p>
+                                </div>
+                                <div >
+                                    <h3>
+                                        <p class="float-left"><strong>@comment.UsersId.UserName</strong></p>
+
+                                    </h3>
+                                    <div class="clearfix"></div>
+                                    <p>@comment.TextComment</p>
+                                    <p>
+                                        @if (User.Identity.IsAuthenticated)
+                                        {
+                                            @if (User.IsInRole("admin") || User.FindFirst(ClaimTypes.NameIdentifier).Value == comment.UsersId.Id)
+                                            {
+                                                <button id="@comment.Id" class="float-right btn text-white btn-info btn-delete-comment ml-2">Delete</button>
+                                            }
+                                        }
+                                    </p>
+                                    <hr>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('.btn-delete-comment').click(
+            deleteComment
+        )
+    });
+
+    function deleteComment() {
+
+        var idComment = $(this).attr("id");
+
+        $.post({
+            url: "/comment/deleteComment",
+            data: JSON.stringify(idComment),
+            contentType: "application/json",
+            success: function (result) {
+                $('div#' + idComment).slideToggle(1000);
+            },
+            error: errorFunc
+        });
+    };
+
+    function errorFunc(errorData) {
+        alert('Ошибка' + errorData.responseText);
+    };
+
+</script>

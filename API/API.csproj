@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Hangfire.AspNetCore" Version="1.7.7" />
+    <PackageReference Include="Hangfire.Core" Version="1.7.7" />
+    <PackageReference Include="Hangfire.Dashboard.Authorization" Version="2.1.0" />
+    <PackageReference Include="Hangfire.SqlServer" Version="1.7.7" />
+    <PackageReference Include="MediatR" Version="7.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0-rc4" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CORE_\CORE_.csproj" />
+    <ProjectReference Include="..\GreatNews.Data\GreatNews.Data.csproj" />
+    <ProjectReference Include="..\GreatNews.Repository\GreatNews.Repository.csproj" />
+    <ProjectReference Include="..\GreatNews.Services\GreatNews.Services.csproj" />
+    <ProjectReference Include="..\GreatNews\GreatNews.csproj" />
+    <ProjectReference Include="..\MediatR_\MediatR_.csproj" />
+  </ItemGroup>
+
+</Project>

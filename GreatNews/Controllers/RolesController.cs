@@ -16,8 +16,8 @@ namespace GreatNews.Controllers
     
     public class RolesController : Controller
     {
-        RoleManager<IdentityRole> _roleManager;
-        UserManager<UserIdent> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly UserManager<UserIdent> _userManager;
         public RolesController(RoleManager<IdentityRole> roleManager, UserManager<UserIdent> userManager)
         {
             _roleManager = roleManager;
