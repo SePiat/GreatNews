@@ -38,41 +38,24 @@ namespace GreatNews.Services
             {
                 foreach (var article in feed.Items)
                 {
-                    news.Add(new News()
+                    if (GetTextOfNews(article.Links.FirstOrDefault().Uri.ToString()).Length>150) //отсеивает ошибки
                     {
-                        Heading = article.Title.Text,
-                        //Description = Regex.Replace(article.Summary.Text, "<.*?>", string.Empty),
-                        Source = article.Links.FirstOrDefault().Uri.ToString(),
-                        Date = article.PublishDate.UtcDateTime,
-                        PositiveIndex =0/* GetPositivityIndex(GetTextOfNews(article.Links.FirstOrDefault().Uri.ToString()))*/,
-                        Content = GetTextOfNews(article.Links.FirstOrDefault().Uri.ToString())
-                    });
+                        news.Add(new News()
+                        {
+                            Heading = article.Title.Text,
+                            Source = article.Links.FirstOrDefault().Uri.ToString(),
+                            Date = article.PublishDate.UtcDateTime,
+                            PositiveIndex = 0,
+                            Content = GetTextOfNews(article.Links.FirstOrDefault().Uri.ToString())
+                        });
+                    }
+                    
                 }
             }
             return news;
         }
-        /*public int GetPositivityIndex(string content)
-        {
-            public string test = "тилли мили трямдяи стол собака табурет жили были";
-        public string cont = $"[{{\"text\":\"{test}\"}}]";
-
-            using (var client = new HttpClient())
-            {
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));//ACCEPT header
-                HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, "http://api.ispras.ru/texterra/v1/nlp?targetType=lemma&apikey=40246ed5a95bc23c0fc92e98977b615dd94e2d1d");
-    request.Content = new StringContent(cont, Encoding.UTF8, "application/json");//CONTENT-TYPE header
-    var x = client.SendAsync(request).Result;
-
-    var responce = x.Content.ReadAsStringAsync().ToString();
-
-
-}
-
-            return 5;
-        }*/
-
-
-
+        
+               
         private int i;
         public string GetTextOfNews(string url)
         {
@@ -90,7 +73,11 @@ namespace GreatNews.Services
 
             Regex.Replace(text, "<.*?>", string.Empty);
 
-            return text;
+            string pattern = @"\s+";
+            Regex regex = new Regex(pattern);
+            var text1 = regex.Replace(text, " ");
+
+            return text1;
         }
 
         public bool AddRange(IEnumerable<News> news)

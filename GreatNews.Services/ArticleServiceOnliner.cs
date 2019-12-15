@@ -38,15 +38,17 @@ namespace GreatNews.Services
             {
                 foreach (var article in feed.Items)
                 {
-                    news.Add(new News()
+                    if (GetTextOfNews(article.Links.FirstOrDefault().Uri.ToString()).Length > 150)//отсеивает ошибки
                     {
-                        Heading = article.Title.Text,
-                        //Description = Regex.Replace(article.Summary.Text, "<.*?>", string.Empty),
-                        Source = article.Links.FirstOrDefault().Uri.ToString(),
-                        Date = article.PublishDate.UtcDateTime,
-                        PositiveIndex = 0,
-                        Content = GetTextOfNews(article.Links.FirstOrDefault().Uri.ToString())
-                    });
+                        news.Add(new News()
+                        {
+                            Heading = article.Title.Text,
+                            Source = article.Links.FirstOrDefault().Uri.ToString(),
+                            Date = article.PublishDate.UtcDateTime,
+                            PositiveIndex = 0,
+                            Content = GetTextOfNews(article.Links.FirstOrDefault().Uri.ToString())
+                        });
+                    }
                 }
             }
 
@@ -71,7 +73,11 @@ namespace GreatNews.Services
 
             Regex.Replace(text, "<.*?>", string.Empty);
 
-            return text;
+            string pattern = @"\s+";
+            Regex regex = new Regex(pattern);
+            var text1 = regex.Replace(text, " ");
+
+            return text1;
         }
 
         public bool AddRange(IEnumerable<News> news)

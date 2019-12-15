@@ -1,4 +1,5 @@
 ﻿using API.Filters;
+using CORE_;
 using GreatNews;
 using GreatNews.Models;
 using GreatNews.Repository;
@@ -59,10 +60,15 @@ namespace API
             services.AddTransient<INewsGetterService, NewsGetterService>();
 
 
-            
+            services.AddTransient<IAFINNService, AFINNService>();
+            services.AddTransient<ILemmatizationService, LemmatizationService>();
+            services.AddTransient<IPositivityIndexService, PositivityIndexService>();
+
+
+
 
             //Regisetr Mediatr
-                        
+
             services.AddMediatR(AppDomain.CurrentDomain.Load("MediatR_"));
             services.AddTransient<IMediator, Mediator>();
 
@@ -104,7 +110,7 @@ namespace API
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, INewsGetterService getnews)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, INewsGetterService getnews, IPositivityIndexService getPosIndex)
         {
             if (env.IsDevelopment())
             {
@@ -144,7 +150,9 @@ namespace API
             RecurringJob.AddOrUpdate(
                 () => getnews.AutoRefresh(),
                 Cron.Hourly);
-
+            RecurringJob.AddOrUpdate(
+                () => getPosIndex.AddPsitiveIndexToNews(),
+                Cron.Hourly(30));
         }
     }
 }

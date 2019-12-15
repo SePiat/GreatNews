@@ -1,19 +1,43 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using CORE_;
+using GreatNews.Models;
+using System.Threading.Tasks;
 
 namespace GreatNews.Services
 {
-    public class PositivityIndexService
+    public class PositivityIndexService : IPositivityIndexService
     {
 
+        private readonly ILemmatizationService _lemmatizationService;
+        private readonly ApplicationContext _context;
 
-        /*var client = new HttpClient();
-        client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));//ACCEPT header
-        HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, "http://api.ispras.ru/texterra/v1/nlp?targetType=lemma&apikey=key");
-        request.Content = new StringContent("[{\"text\":\" 123   \"}]", Encoding.UTF8,"application/json");//CONTENT-TYPE header
+        public PositivityIndexService(ILemmatizationService lemmatizationService, ApplicationContext context)
+        {
+            _lemmatizationService = lemmatizationService;
+            _context = context;
+        }
 
-        var x = client.SendAsync(request).Result;*/
+        public async Task<bool> AddPsitiveIndexToNews()
+        {
+            
+            foreach (var news in _context.News_)
+            {
+                if (news.PositiveIndex == 0)
+                {
+                    try
+                    {
+                        news.PositiveIndex = await _lemmatizationService.GetPositiveIndex(news.Id);
+                    }
+                    catch (System.Exception)
+                    {
+                    _context.Remove(news);                    
+                        continue;
+                    }
+              }
+                 
+            }
+            _context.SaveChanges();
+            return true;
+        }
 
     }
 }
