@@ -1,9 +1,0 @@
-C:\Users\User\Desktop\RepVS\GreatNews\GreatNews\CORE_\bin\Debug\netcoreapp2.2\CORE_.deps.json
-C:\Users\User\Desktop\RepVS\GreatNews\GreatNews\CORE_\bin\Debug\netcoreapp2.2\CORE_.dll
-C:\Users\User\Desktop\RepVS\GreatNews\GreatNews\CORE_\bin\Debug\netcoreapp2.2\CORE_.pdb
-C:\Users\User\Desktop\RepVS\GreatNews\GreatNews\CORE_\obj\Debug\netcoreapp2.2\CORE_.csproj.CoreCompileInputs.cache
-C:\Users\User\Desktop\RepVS\GreatNews\GreatNews\CORE_\obj\Debug\netcoreapp2.2\CORE_.AssemblyInfoInputs.cache
-C:\Users\User\Desktop\RepVS\GreatNews\GreatNews\CORE_\obj\Debug\netcoreapp2.2\CORE_.AssemblyInfo.cs
-C:\Users\User\Desktop\RepVS\GreatNews\GreatNews\CORE_\obj\Debug\netcoreapp2.2\CORE_.dll
-C:\Users\User\Desktop\RepVS\GreatNews\GreatNews\CORE_\obj\Debug\netcoreapp2.2\CORE_.pdb
-c:\Users\User\Desktop\RepVS\GreatNews\GreatNews\CORE_\obj\Debug\netcoreapp2.2\CORE_.csprojAssemblyReference.cache

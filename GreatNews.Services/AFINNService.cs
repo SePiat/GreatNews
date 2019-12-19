@@ -13,7 +13,9 @@ namespace GreatNews.Services
         {
             try
             {
-                var afinnData = File.ReadAllText(@"c:\Users\User\Desktop\RepVS\GreatNews\GreatNews\GreatNews.Services\AFINN.json");
+                /*var afinnData = File.ReadAllText(@"c:\Users\User\Desktop\RepVS\GreatNews\GreatNews\GreatNews.Services\AFINN.json");*/
+                /*var dir = Directory.GetCurrentDirectory(); "C:\\Users\\User\\Desktop\\RepVS\\GreatNews\\GreatNews\\API"*/
+                var afinnData = File.ReadAllText(@"..\GreatNews.Services\AFINN.json");
                 var afinnDictionary = JsonConvert.DeserializeObject<Dictionary<string, string>>(afinnData);
                 return afinnDictionary;
             }
